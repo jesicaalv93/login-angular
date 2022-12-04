@@ -13,14 +13,12 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                <a class="nav-link active" aria-current="page" routerLink="/dashboard" *ngIf="isLogin">Dashboard</a>
               </li>              
              
             </ul>
-            <form class="d-flex">
-              <button class="btn btn-outline-success" type="button" *ngIf="" routerLink="/login">Login</button>
-              <button class="btn btn-outline-success" type="button" *ngIf="">Logout</button>
-            </form>
+            <form class="d-flex"> <button class="btn btn-outline-success" type="button" *ngIf="!isLogin" routerLink="/login">Login</button>
+              <button class="btn btn-outline-success" type="button" *ngIf="isLogin" (click)="btnLogout()">Logout</button> </form>
           </div>
         </div>
       </nav>
